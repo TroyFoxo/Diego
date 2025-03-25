@@ -15,7 +15,12 @@ class CreateSuperheroesTable extends Migration
     {
         Schema::create('superheroes', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre_real');
+            $table->string('nombre_heroe');
+            $table->string('foto_url')->nullable();
+            $table->text('informacion_adicional')->nullable();
             $table->timestamps();
+            $table->softDeletes(); // Agrega esta línea aquí
         });
     }
 
